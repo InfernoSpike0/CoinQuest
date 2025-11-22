@@ -9,10 +9,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] Material chaserMaterial;
     [SerializeField] Transform target;
     [SerializeField] float typeThreshold = 0.5f; // Threshold to determine enemy type. Used for testing.
-    float enemyType = Random.Range(0f, 1f);
+    float enemyType;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        float enemyType = Random.Range(0f, 1f);
         if (enemyType >= typeThreshold)
         {
             GetComponent<Renderer>().material = walkerMaterial;
