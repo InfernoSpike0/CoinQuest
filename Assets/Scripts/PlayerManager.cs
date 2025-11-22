@@ -5,20 +5,21 @@ public class PlayerManager : MonoBehaviour
 {
     [SerializeField] Rigidbody player;
     [SerializeField] float speed = 5f;
-    bool isGrounded = true;
+    //bool isGrounded = true;
     [SerializeField] float jumpForce = 5f;
     [SerializeField] float fireRate = 0.5f;
     [SerializeField] GameObject projectilePrefab;
+    int score = 0;
 
     // Update is called once per frame
     void Update()
     {
         // Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        /*if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             player.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -31,12 +32,12 @@ public class PlayerManager : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 move = new Vector3(horizontal, 0f, vertical);
-        transform.Translate(move * Time.fixedDeltaTime * speed);
+        transform.Translate(move * Time.fixedDeltaTime * speed, Space.World);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        isGrounded = true;
+        //isGrounded = true;
 
     }
 
@@ -45,6 +46,7 @@ public class PlayerManager : MonoBehaviour
         if (other.gameObject.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
+            score += 1;
         }
     }
 }

@@ -19,7 +19,7 @@ public class CameraManager : MonoBehaviour
     void Update()
     {
         
-
+        // This is actually all usless, it is supposed to be top down. 
         transform.position = player.position + firstPersonOffset;
         transform.rotation = player.rotation;
 
