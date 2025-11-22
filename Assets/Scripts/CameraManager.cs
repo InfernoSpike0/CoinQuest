@@ -1,7 +1,13 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraManager : MonoBehaviour
 {
+    [SerializeField] Transform player;
+    [SerializeField] float mouseSensitivity = 70f;
+    float xRotation = 0f;
+    [SerializeField] Vector3 firstPersonOffset = new Vector3(0f, 0.5f, 0f);
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,5 +19,17 @@ public class CameraManager : MonoBehaviour
     void Update()
     {
         
+
+        transform.position = player.position + firstPersonOffset;
+        transform.rotation = player.rotation;
+
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        transform.parent.Rotate(Vector3.up * mouseX);
     }
 }
