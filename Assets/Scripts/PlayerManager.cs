@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-             
+            
             Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation);
         }
     }
