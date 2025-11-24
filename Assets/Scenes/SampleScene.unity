@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 222359817}
   - component: {fileID: 222359816}
   - component: {fileID: 222359821}
-  - component: {fileID: 222359820}
   - component: {fileID: 222359822}
   m_Layer: 3
   m_Name: Player
@@ -235,31 +234,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &222359820
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 222359815}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &222359821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,7 +701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 5260824968366708537, guid: 6aa5b9c3310f57042999a0f49c835297, type: 3}
   coinFrequency: 2
-  enemy1: {fileID: 0}
+  enemy1: {fileID: 1398736692}
   enemy2: {fileID: 0}
   enemyFrequency: 5
 --- !u!4 &955286424
@@ -745,6 +719,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1398736692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4143371378072949570, guid: c1756ebc78cb388449c895c2041c84fc, type: 3}
+  m_PrefabInstance: {fileID: 3502797299917186650}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1545156732
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     int score = 0;
 
-    // Update is called once per frame
     void Update()
     {
         // Jumping
@@ -23,6 +22,7 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+             
             Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation);
         }
     }
