@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
 {
     public Rigidbody rb;
     public float walkerSpeed = 3f;
-    [SerializeField] float chaserSpeed = 6f;
+    public float chaserSpeed = 6f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
