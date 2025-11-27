@@ -1,18 +1,11 @@
 using UnityEngine;
-
-public class CoinBehaviour : MonoBehaviour
+using System.Collections;
+using System.Collections.Generic;
+public class Coin : MonoBehaviour
 {
-    [SerializeField] float rotationSpeed = 100f;
-    [SerializeField] GameObject coin;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public float spin = 120f;
+    void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        transform.Rotate(Vector3.right, rotationSpeed * Time.deltaTime);
+        transform.Rotate(0f, spin * Time.deltaTime, 0f, Space.World);
     }
 }
