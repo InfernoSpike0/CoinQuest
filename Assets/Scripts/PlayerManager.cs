@@ -3,12 +3,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] Rigidbody player;
+    private Rigidbody player;
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpForce = 5f;
     [SerializeField] float fireRate = 0.5f;
     [SerializeField] GameObject projectilePrefab;
     int score = 0;
+
+    void Start()
+    {
+        player = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
@@ -24,13 +29,8 @@ public class PlayerManager : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 move = new Vector3(horizontal, 0f, vertical);
-        transform.Translate(move * Time.fixedDeltaTime * speed, Space.World);
-    }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        //isGrounded = true;
-
+        player.angularVelocity = new Vector3(horizontal * speed, 0f, horizontal * speed);
     }
 
     void OnTriggerEnter(Collider other)
