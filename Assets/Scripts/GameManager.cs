@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public int score = 0;
     public static GameManager game;
     public List<GameObject> coins = new List<GameObject>();
+    [SerializeField] PlayerManager playerManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Awake()
@@ -31,5 +33,10 @@ public class GameManager : MonoBehaviour
         score += amount;
         Debug.Log("Score: " + score);
         Debug.Log("Coins left: " + coins.Count);
+    }
+
+    public void Lose()
+    {
+        SceneManager.LoadScene("LoseScene");
     }
 }

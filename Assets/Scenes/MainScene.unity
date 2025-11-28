@@ -1200,6 +1200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   score: 0
   coins: []
+  playerManager: {fileID: 2672707529143012488, guid: 3017c985b474c1d4db85968c315426fb, type: 3}
 --- !u!4 &1780179871
 Transform:
   m_ObjectHideFlags: 0

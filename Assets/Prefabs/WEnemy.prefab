@@ -155,4 +155,5 @@ MonoBehaviour:
   rb: {fileID: 5536173177215402374}
   walkerSpeed: 3
   chaserSpeed: 6
+  damage: 1
   walkPointRange: 9

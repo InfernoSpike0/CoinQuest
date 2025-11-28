@@ -155,4 +155,5 @@ MonoBehaviour:
   rb: {fileID: 5536173177215402374}
   walkerSpeed: 3
   chaserSpeed: 6
+  damage: 1
   player: {fileID: 1305149482348404123, guid: 3017c985b474c1d4db85968c315426fb, type: 3}

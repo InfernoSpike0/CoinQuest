@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float speed = 5f;
     [SerializeField] float fireRate = 0.5f;
     [SerializeField] GameObject projectilePrefab;
-    [SerializeField] float hp = 100f;
+    public float hp = 100f;
 
     float timer;
 
@@ -74,10 +75,9 @@ public class PlayerManager : MonoBehaviour
     public void Damage(float damageTaken)
     {
         hp -= damageTaken;
-        if(hp <= 0)
+        if (hp <= 0)
         {
-            // Insert lose thigny here
-            Debug.Log("bleh");
+            GameManager.game.Lose();
         }
     }
 }
