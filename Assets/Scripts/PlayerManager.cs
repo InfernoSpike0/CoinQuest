@@ -53,13 +53,4 @@ public class PlayerManager : MonoBehaviour
 
         return transform.position;
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Coin"))
-        {
-            Destroy(other.gameObject);
-            score += 1;
-            Debug.Log("Score: " + score);
-        }
-    }
 }

@@ -11,7 +11,7 @@ public class CanvasManager : MonoBehaviour
     {
         if (gameManager == null)
         {
-            canvas = GameObject.FindGameObjectWithTag("");
+            canvas = GameObject.FindGameObjectWithTag("GameController");
             if (canvas != null)
             {
                 gameManager = canvas.GetComponent<GameManager>();

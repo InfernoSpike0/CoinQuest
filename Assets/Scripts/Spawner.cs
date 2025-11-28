@@ -27,7 +27,8 @@ public class Spawner : MonoBehaviour
         {
             for (int i = 0; i < 5; i++)
             {
-                Instantiate(coin, new Vector3(Random.Range(-9f, 9f), 1f, Random.Range(-9f, 9f)), Quaternion.Euler(0f, 0f, 90f));
+                GameObject spawnedCoin = Instantiate(coin, new Vector3(Random.Range(-9f, 9f), 1f, Random.Range(-9f, 9f)), Quaternion.Euler(0f, 0f, 90f));
+                GameManager.game.SpawnedCoin(spawnedCoin);
             }
 
             coinTime = 0f;

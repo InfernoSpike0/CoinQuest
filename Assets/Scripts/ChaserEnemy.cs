@@ -15,6 +15,6 @@ public class ChaserEnemy : Enemy
 
         playerPosition = new Vector3 (playerPositionX, transform.position.y, playerPositionZ);
 
-        transform.position = Vector3.MoveTowards(transform.position, playerPosition, chaserSpeed * Time.deltaTime);
+        Move(playerPosition, chaserSpeed);
     }
 }
