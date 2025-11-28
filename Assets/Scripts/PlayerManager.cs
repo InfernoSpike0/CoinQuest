@@ -14,19 +14,27 @@ public class PlayerManager : MonoBehaviour
     {
         player = GetComponent<Rigidbody>();
     }
-
     void Update()
     {
+        // Aim
+        Vector3 mousePos = GetMouseWorldXZ();
+        Vector3 lookDir = mousePos - transform.position;
+        lookDir.y = 0f; // Flatten to XZ plane
+
+        if (lookDir.sqrMagnitude > 0.001f)
+        {
+            transform.rotation = Quaternion.LookRotation(lookDir);
+        }
+        // Shooting
         if (Input.GetMouseButton(0))
         {
-            if(timer <= 0)
+            if (timer <= 0)
             {
                 Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation);
                 timer = fireRate;
             }
         }
     }
-
     void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -35,7 +43,16 @@ public class PlayerManager : MonoBehaviour
         transform.Translate(move * Time.fixedDeltaTime * speed, Space.World);
         timer -= Time.fixedDeltaTime;
     }
+    Vector3 GetMouseWorldXZ()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Plane plane = new Plane(Vector3.up, transform.position); // XZ plane at player's height
 
+        if (plane.Raycast(ray, out float distance))
+            return ray.GetPoint(distance);
+
+        return transform.position;
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coin"))
