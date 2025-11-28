@@ -4,8 +4,10 @@ public class ChaserEnemy : Enemy
 {
     [SerializeField] GameObject player;
     Vector3 playerPosition;
-
-
+    void Start()
+    {
+        damage = 5f;
+    }
     private void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player");
