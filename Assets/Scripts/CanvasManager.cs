@@ -32,6 +32,6 @@ public class CanvasManager : MonoBehaviour
                 playerManager = player.GetComponent<PlayerManager>();
             }
         }
-        hpText.text = $"HP: {playerManager.hp:100}";
+        hpText.text = $"HP: {playerManager.hp:0}";
     }
 }
