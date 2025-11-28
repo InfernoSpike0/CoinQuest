@@ -130,7 +130,7 @@ MonoBehaviour:
   speed: 6
   fireRate: 0.5
   projectilePrefab: {fileID: 7293754485459730069, guid: c9f87f7555096094788ce9fb3914a7d1, type: 3}
-  score: 0
+  hp: 100
 --- !u!54 &2983192836090275394
 Rigidbody:
   m_ObjectHideFlags: 0

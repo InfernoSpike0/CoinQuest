@@ -8,22 +8,25 @@ public class WalkerEnemy : Enemy
     bool walkPointSet;
     float randomZ;
     float randomX;
-
+    void Start()
+    {
+        damage = 15f;
+    }
     private void GetWalkPoint()
     {
         randomZ = Random.Range(-walkPointRange, walkPointRange);
         randomX = Random.Range(-walkPointRange, walkPointRange);
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
         walkPointSet = true;
     }
 
     private void MoveToWalkPoint()
     {
         Vector3 newPos = Vector3.MoveTowards(transform.position, walkPoint, walkerSpeed * Time.deltaTime);
-        
         rb.MovePosition(newPos);
+
+        Move(newPos, walkerSpeed);
 
         if (Vector3.Distance(transform.position, walkPoint) < 0.5f)
         {
@@ -37,7 +40,6 @@ public class WalkerEnemy : Enemy
         {
             GetWalkPoint();
         }
-
         MoveToWalkPoint();
     }
 
