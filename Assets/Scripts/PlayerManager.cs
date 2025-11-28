@@ -72,24 +72,4 @@ public class PlayerManager : MonoBehaviour
 
         return transform.position;
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Coin"))
-        {
-            Destroy(other.gameObject);
-            score++;
-            Debug.Log("Score: " + score);
-        }
-    }
-
-    public void Damage(float damageTaken)
-    {
-        hp -= damageTaken;
-        if (hp <= 0)
-        {
-            Debug.Log("Player has died of death");
-            // Game over logic here
-        }
-    }
 }
