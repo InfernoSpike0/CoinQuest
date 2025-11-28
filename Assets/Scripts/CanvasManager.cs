@@ -4,19 +4,19 @@ using UnityEngine.UI;
 public class CanvasManager : MonoBehaviour
 {
     [SerializeField] Text scoreText;
-    PlayerManager playerManager;
-    GameObject player;
+    GameManager gameManager;
+    GameObject canvas;
 
     void Update()
     {
-        if (playerManager == null)
+        if (gameManager == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null)
+            canvas = GameObject.FindGameObjectWithTag("");
+            if (canvas != null)
             {
-                playerManager = player.GetComponent<PlayerManager>();
+                gameManager = canvas.GetComponent<GameManager>();
             }
         }
-        scoreText.text = $"Score: {playerManager.score:0}";
+        scoreText.text = $"Score: {gameManager.score:0}";
     }
 }
