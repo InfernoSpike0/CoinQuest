@@ -33,10 +33,20 @@ public class GameManager : MonoBehaviour
         score += amount;
         Debug.Log("Score: " + score);
         Debug.Log("Coins left: " + coins.Count);
+
+        if (score >= 100)
+        {
+            Win();
+        }
     }
 
     public void Lose()
     {
         SceneManager.LoadScene("LoseScene");
+    }
+
+    private void Win()
+    {
+        SceneManager.LoadScene("WinScene");
     }
 }
