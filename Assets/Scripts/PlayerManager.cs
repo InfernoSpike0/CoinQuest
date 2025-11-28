@@ -9,7 +9,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float speed = 5f;
     [SerializeField] float fireRate = 0.5f;
     [SerializeField] GameObject projectilePrefab;
-    [SerializeField] int score = 0;
     [SerializeField] float hp = 100f;
 
     float timer;
@@ -71,5 +70,14 @@ public class PlayerManager : MonoBehaviour
             return ray.GetPoint(distance);
 
         return transform.position;
+    }
+    public void Damage(float damageTaken)
+    {
+        hp -= damageTaken;
+        if(hp <= 0)
+        {
+            // Insert lose thigny here
+            Debug.Log("bleh");
+        }
     }
 }
