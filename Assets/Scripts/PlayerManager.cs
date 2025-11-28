@@ -34,6 +34,12 @@ public class PlayerManager : MonoBehaviour
                 timer = fireRate;
             }
         }
+
+        // Making sure the player remains in the play area
+        if(transform.position.y < 0f)
+        {
+            transform.position = new Vector3(0, 1, 0);
+        }
     }
     void FixedUpdate()
     {
