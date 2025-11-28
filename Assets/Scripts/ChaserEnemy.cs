@@ -8,6 +8,8 @@ public class ChaserEnemy : Enemy
 
     private void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        
         float playerPositionX = player.transform.position.x;
         float playerPositionZ = player.transform.position.z;
 

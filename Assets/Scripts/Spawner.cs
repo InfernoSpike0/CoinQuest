@@ -3,6 +3,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] GameObject coin;
+    [SerializeField] GameObject player;
     [SerializeField] float coinFrequency = 2f;
     [SerializeField] GameObject enemy1;
     [SerializeField] GameObject enemy2;
@@ -12,7 +13,7 @@ public class Spawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Instantiate(player, new Vector3(0, 1, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -36,7 +37,9 @@ public class Spawner : MonoBehaviour
         {
             for (int i = 0; i < 3; i++)
             {
-                Instantiate(enemy1, new Vector3(Random.Range(-2f, 2f), 1f, Random.Range(-2f, 2f)), Quaternion.identity);
+                GameObject prefabToSpawn = Random.Range(0, 2) == 0 ? enemy1 : enemy2;
+
+                Instantiate(prefabToSpawn, new Vector3(Random.Range(-2f, 2f), 1f, Random.Range(-2f, 2f)), Quaternion.identity);
             }
 
             enemyTime = 0f;
