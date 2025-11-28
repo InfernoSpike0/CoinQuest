@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // egal
+    
     public Rigidbody rb;
     public float walkerSpeed = 3f;
     public float chaserSpeed = 6f;
