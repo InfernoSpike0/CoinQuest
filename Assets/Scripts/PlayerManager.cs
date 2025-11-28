@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] float speed = 5f;
     [SerializeField] float fireRate = 0.5f;
     [SerializeField] GameObject projectilePrefab;
-    int score = 0;
+    public int score = 0;
 
     void Start()
     {
