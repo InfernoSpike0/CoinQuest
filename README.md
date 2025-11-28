@@ -12,6 +12,7 @@ Description:
     There are two types of enemies: Chasers and Walkers
     Chasers move quickly and follow the player, while Walkers move slowly and wander.
     Left Click shoots a projectile that destroys enemies.
+    Use the mouse to aim the fired projectiles.
     Getting touched by an enemy reduces the player's HP.
     The player wins by collecting 100 coins.
     The player loses by dropping to 0 HP.
