@@ -270,7 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123ff891754d54745a95802acfc63eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8097754257473486321, guid: 3017c985b474c1d4db85968c315426fb, type: 3}
   offSet: {x: 0, y: 9.5, z: 0}
 --- !u!1 &410087039
 GameObject:
@@ -653,10 +652,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 5260824968366708537, guid: 6aa5b9c3310f57042999a0f49c835297, type: 3}
   player: {fileID: 1305149482348404123, guid: 3017c985b474c1d4db85968c315426fb, type: 3}
-  coinFrequency: 2
+  coinFrequency: 4
   enemy1: {fileID: 5175069595393568878, guid: f793c7d11e09fa041a7b8a0fc56d5dee, type: 3}
   enemy2: {fileID: 5175069595393568878, guid: f9990bad63457b241b6c64ad1136d24e, type: 3}
-  enemyFrequency: 5
+  enemyFrequency: 10
 --- !u!4 &955286424
 Transform:
   m_ObjectHideFlags: 0

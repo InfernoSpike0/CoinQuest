@@ -22,8 +22,8 @@ public class WalkerEnemy : Enemy
     private void MoveToWalkPoint()
     {
         Vector3 newPos = Vector3.MoveTowards(transform.position, walkPoint, walkerSpeed * Time.deltaTime);
-        
-        rb.MovePosition(newPos);
+
+        Move(newPos, walkerSpeed);
 
         if (Vector3.Distance(transform.position, walkPoint) < 0.5f)
         {

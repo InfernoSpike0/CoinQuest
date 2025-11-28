@@ -9,15 +9,9 @@ public class Enemy : MonoBehaviour
     public float walkerSpeed = 3f;
     public float chaserSpeed = 6f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Move(Vector3 target, float speed)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
+        if (rb != null)
+            rb.MovePosition(Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime));
     }
 }
